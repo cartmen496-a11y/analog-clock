@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Neon Analog Clock | Инженс эффект</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="clock-card">
+            <div class="glow-effect"></div>
+            <div class="clock-wrapper">
+                <canvas id="clockCanvas" width="600" height="600"></canvas>
+            </div>
+            <div class="clock-info">
+                <div class="date-display" id="dateDisplay"></div>
+                <div class="time-digital" id="digitalTime"></div>
+            </div>
+            <div class="s   ound-control">
+                <button id="soundToggleBtn" class="sound-btn">
+                    <span class="sound-icon">🔊</span>
+                    <span class="sound-text">Звук включён</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
