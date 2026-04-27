@@ -60,6 +60,9 @@ body::before {
         inset 0 1px 1px rgba(255, 255, 255, 0.1);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(0, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .clock-card:hover {
@@ -123,29 +126,92 @@ canvas:hover {
         0 25px 50px rgba(0, 0, 0, 0.5);
 }
 
+/* Панель выбора стиля */
+.style-panel {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 60px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    width: 100%;
+}
+
+.style-title {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: rgba(0, 255, 255, 0.7);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.style-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.style-btn {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    color: #00ffff;
+    padding: 8px 18px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+}
+
+.style-btn:hover {
+    transform: translateY(-2px);
+    background: rgba(0, 255, 255, 0.15);
+    border-color: rgba(0, 255, 255, 0.8);
+}
+
+.style-btn.active {
+    background: rgba(0, 255, 255, 0.25);
+    border-color: #00ffff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.style-icon {
+    font-size: 16px;
+}
+
 .clock-info {
     text-align: center;
-    margin-top: 30px;
-    padding: 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 16px 28px;
     background: rgba(0, 0, 0, 0.3);
-    border-radius: 40px;
+    border-radius: 50px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(0, 255, 255, 0.2);
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    width: auto;
+    min-width: 280px;
 }
 
 .date-display {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     color: rgba(0, 255, 255, 0.9);
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
 .time-digital {
-    font-size: 36px;
+    font-size: 34px;
     font-weight: 700;
     color: #00ffff;
     font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
@@ -167,7 +233,8 @@ canvas:hover {
 
 .sound-control {
     text-align: center;
-    margin-top: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .sound-btn {
@@ -205,10 +272,10 @@ canvas:hover {
     filter: drop-shadow(0 0 5px #00ffff);
 }
 
-/* Адаптивность */
+/* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
     .clock-card {
-        padding: 25px;
+        padding: 20px;
         border-radius: 50px;
     }
     
@@ -219,17 +286,73 @@ canvas:hover {
         max-height: 500px;
     }
     
+    .style-panel {
+        margin-top: 18px;
+        margin-bottom: 15px;
+        padding: 12px 15px;
+    }
+    
+    .style-buttons {
+        gap: 8px;
+    }
+    
+    .style-btn {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+    
+    .style-icon {
+        font-size: 13px;
+    }
+    
+    .clock-info {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding: 12px 20px;
+        min-width: 240px;
+    }
+    
     .time-digital {
         font-size: 24px;
         letter-spacing: 2px;
     }
     
     .date-display {
-        font-size: 12px;
+        font-size: 11px;
     }
     
     .sound-btn {
-        padding: 8px 24px;
+        padding: 10px 24px;
         font-size: 14px;
+    }
+    
+    .sound-icon {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .clock-card {
+        padding: 15px;
+    }
+    
+    .style-btn {
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+    
+    .clock-info {
+        padding: 10px 16px;
+        min-width: 200px;
+    }
+    
+    .time-digital {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+    
+    .sound-btn {
+        padding: 8px 18px;
+        font-size: 12px;
     }
 }

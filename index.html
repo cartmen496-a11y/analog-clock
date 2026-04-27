@@ -3,21 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Neon Analog Clock | Инженс эффект</title>
+    <title>Analog Clock | 5 стилей</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="wrapper">
         <div class="clock-card">
             <div class="glow-effect"></div>
+            
             <div class="clock-wrapper">
                 <canvas id="clockCanvas" width="600" height="600"></canvas>
             </div>
+            
+            <!-- Панель выбора стиля -->
+            <div class="style-panel">
+                <div class="style-title">🎨 ВЫБЕРИ СТИЛЬ</div>
+                <div class="style-buttons">
+                    <button class="style-btn" data-style="neon">
+                        <span class="style-icon">💚</span>
+                        <span>Neon</span>
+                    </button>
+                    <button class="style-btn" data-style="gold">
+                        <span class="style-icon">✨</span>
+                        <span>Gold</span>
+                    </button>
+                    <button class="style-btn" data-style="ice">
+                        <span class="style-icon">❄️</span>
+                        <span>Ice</span>
+                    </button>
+                    <button class="style-btn" data-style="sunset">
+                        <span class="style-icon">🌅</span>
+                        <span>Sunset</span>
+                    </button>
+                    <button class="style-btn" data-style="classic">
+                        <span class="style-icon">🕐</span>
+                        <span>Classic</span>
+                    </button>
+                </div>
+            </div>
+            
             <div class="clock-info">
                 <div class="date-display" id="dateDisplay"></div>
                 <div class="time-digital" id="digitalTime"></div>
             </div>
-            <div class="s   ound-control">
+            
+            <div class="sound-control">
                 <button id="soundToggleBtn" class="sound-btn">
                     <span class="sound-icon">🔊</span>
                     <span class="sound-text">Звук включён</span>
